@@ -10,10 +10,10 @@
     },
     "assets": {
       "host01": [
-        {"file": "orange-app.yaml", "target": "/root", "chmod": "+w"},
-        {"file": "orange-app-good.yaml", "target": "/opt"},
-        {"file": "pv-analytics.yaml", "target": "/opt"},
-        {"file": "fin-challenge.json", "target": "/root", "chmod": "+w"}
+        {"file": "orange-app.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "orange-app-good.yaml", "target": "/opt/"},
+        {"file": "pv-analytics.yaml", "target": "/opt/"},
+        {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"}
       ]
     },
     "steps": [
