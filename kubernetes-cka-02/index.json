@@ -10,15 +10,15 @@
     },
     "assets": {
       "host01": [
-        {"file": "elliphant.yaml", "target": "/opt/.logs"},
-        {"file": "super-user-pod.yaml", "target": "/opt/.logs"},
-        {"file": "use-pv.yaml", "target": "/root"},
-        {"file": "use-pv-good.yaml", "target": "/opt/.logs"},
-        {"file": "pv-1.yaml", "target": "/opt/.logs"},
-        {"file": "pvc-1.yaml", "target": "/opt/.logs"},
-        {"file": "alterway-user.yaml.tpl", "target": "/opt/.logs"},
-        {"file": "fin-challenge.json", "target": "/root"},
-        {"file": "giveup", "target": "/usr/local/bin", "chmod": "+x"}
+        {"file": "elliphant.yaml", "target": "/opt/.logs/"},
+        {"file": "super-user-pod.yaml", "target": "/opt/.logs/"},
+        {"file": "use-pv.yaml", "target": "/root/"},
+        {"file": "use-pv-good.yaml", "target": "/opt/.logs/"},
+        {"file": "pv-1.yaml", "target": "/opt/.logs/"},
+        {"file": "pvc-1.yaml", "target": "/opt/.logs/"},
+        {"file": "alterway-user.yaml.tpl", "target": "/opt/.logs/"},
+        {"file": "fin-challenge.json", "target": "/root/"},
+        {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+x"}
       ]
     },
     "steps": [

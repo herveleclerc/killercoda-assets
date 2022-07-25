@@ -8,7 +8,7 @@ Parfait ! Vous avez fini Challenge n°1 de la certification CKA
 # Solutions    
 # 1
 
-- ETCDCTL_API=3 etcdctl --endpoints=https://$(hostname -i | awk '{print $2;}'):2379 --cacert="/etc/kubernetes/pki/etcd/ca.crt" --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key=/etc/kubernetes/pki/etcd/healthcheck-client.key snapshot save /tmp/etcd-backup.db
+- ETCDCTL_API=3 etcdctl --endpoints=https://$(hostname -i | awk '{print $1;}'):2379 --cacert="/etc/kubernetes/pki/etcd/ca.crt" --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key=/etc/kubernetes/pki/etcd/healthcheck-client.key snapshot save /tmp/etcd-backup.db
 
 # 2
 <PRE>
@@ -26,7 +26,7 @@ spec:
     image: redis:alpine
     resources:
       requests:
-        cpu: "1"
+        cpu: "0.25"
         memory: "200Mi"
 EOF
 </PRE>
@@ -56,6 +56,22 @@ EOF
 # 4 
 
 <PRE>
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-1
+spec:
+  capacity:
+    storage: 10Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /data
+EOF
+
+
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolumeClaim
