@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: use-pv
+  name: use-pv
+  namespace: default
+spec:
+  containers:
+    - name: use-pv
+      image: nginx
