@@ -4,6 +4,13 @@
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
   
 function verify_step() {
+
+  if [ -f "/opt/.logs/give_up" ]; then
+    echo "give_up file found, exiting"
+    rm -f "/opt/.logs/give_up"
+    echo "1:KO >> /opt/.logs/status.log"
+    return 0
+  fi
   
   create=$(${kctl} auth can-i create pods --as=alterway --namespace=development)
   watch=$(${kctl} auth can-i watch pods --as=alterway --namespace=development)

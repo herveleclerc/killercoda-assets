@@ -18,7 +18,7 @@
         {"file": "pvc-1.yaml", "target": "/opt/.logs/"},
         {"file": "alterway-user.yaml.tpl", "target": "/opt/.logs/"},
         {"file": "fin-challenge.json", "target": "/root/"},
-        {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+x"}
+        {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"}
       ]
     },
     "steps": [
