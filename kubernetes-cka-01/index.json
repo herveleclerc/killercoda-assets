@@ -8,6 +8,14 @@
       "foreground": "intro/foreground.sh",
       "background": "intro/background.sh"
     },
+    "assets": {
+      "host01": [
+        {"file": "orange-app.yaml", "target": "/root", "chmod": "+w"},
+        {"file": "orange-app-good.yaml", "target": "/opt"},
+        {"file": "pv-analytics.yaml", "target": "/opt"},
+        {"file": "fin-challenge.json", "target": "/root", "chmod": "+w"}
+      ]
+    },
     "steps": [
       {
         "title": "Déployer un pod",
@@ -78,14 +86,6 @@
     "finish": {
       "text": "finish.md"
     }
-  },
-  "assets": {
-    "host01": [
-      {"file": "orange-app.yaml", "target": "/root"},
-      {"file": "orange-app-good.yaml", "target": "/opt"},
-      {"file": "pv-analytics.yaml", "target": "/opt"},
-      {"file": "fin-challenge.json", "target": "/root"}
-    ]
   },
   "backend": {
     "imageid": "kubernetes-kubeadm-2nodes"
