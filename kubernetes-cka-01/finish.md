@@ -76,7 +76,8 @@ kubectl run temp-bus -n finance --image=redis:alpine
 
 # 9 
   ```bash
-fixer le fichier yaml ```bash
+fixer le fichier yaml 
+
 remplacer sleeeeeep 3 par sleep 3 et relancer
 ```
 

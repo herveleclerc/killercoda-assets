@@ -29,7 +29,7 @@ function verify_step() {
             --data "{\"alias\":\"strongmind\",
             \"emoji\":\":strongmind:\",
              \"text\":\"Challenge cka-001\",
-            \"attachments\":[{\"title\":\"Passage du Challenge cka-001 (killercoda) avec un score de $p%\",
+            \"attachments\":[{\"title\":\"Passage du Challenge cka-002 (killercoda) avec un score de $p%\",
             \"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-cka-02\",\"text\":\"$prenom $nom ($email)  a passé la certification cka-002 avec un résultat de $p% ($msg)\",\"color\":\"#764FA5\"}]}" \
             https://rocket.alterway.fr/hooks/QxnH7sqdQwLeby5vP/E5KwEWg88cT8RHrJJifYzdG5wfL5RPySPzKwMxZp$code
             retVal=$?
