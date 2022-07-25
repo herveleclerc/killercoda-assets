@@ -1,4 +1,4 @@
-Parfait ! Vous avez fini Challenge n°1 de la certification CKA
+Parfait ! Vous avez fini Challenge n°2 de la certification CKA
 
 
 ## References 📚
@@ -6,12 +6,18 @@ Parfait ! Vous avez fini Challenge n°1 de la certification CKA
 
 ---
 # Solutions    
+
 # 1
 
-- ETCDCTL_API=3 etcdctl --endpoints=https://$(hostname -i | awk '{print $1;}'):2379 --cacert="/etc/kubernetes/pki/etcd/ca.crt" --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key=/etc/kubernetes/pki/etcd/healthcheck-client.key snapshot save /tmp/etcd-backup.db
+```bash
+ETCDCTL_API=3 etcdctl --endpoints=https://$(hostname -i | awk '{print $1;}'):2379 --cacert="/etc/kubernetes/pki/etcd/ca.crt" --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key=/etc/kubernetes/pki/etcd/healthcheck-client.key snapshot save /tmp/etcd-backup.db
+
+```
+
+
 
 # 2
-<PRE>
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod
@@ -29,12 +35,12 @@ spec:
         cpu: "0.25"
         memory: "200Mi"
 EOF
-</PRE>
+```
 
 
 # 3 
 
-<PRE>
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: Pod
@@ -52,10 +58,10 @@ spec:
       capabilities:
         add: ["SYS_TIME"]
 EOF
-</PRE>
+```
 # 4 
 
-<PRE>
+```bash
 
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
@@ -107,20 +113,20 @@ spec:
         claimName: my-pvc-claim
 EOF
 
-</PRE>
+```
 # 5
 
-<PRE>
+```bash
 
 kubectl create deploy nginx-deploy --image=nginx:1.17
 kubectl set image deployment/nginx-deploy nginx=nginx:1.18
 kubectl rollout status deploy nginx-deploy
 
-</PRE>
+```
 
 # 6 
 
-<PRE>
+```bash
 cat <<EOF> alterway-user.yaml
 apiVersion: certificates.k8s.io/v1beta1
 kind: CertificateSigningRequest
@@ -142,7 +148,7 @@ kubectl create role developer -n development --verb=create,list,get,update,delet
 kubectl create rolebinding developer-binding --role=developer --user=alterway --namespace=development
 kubectl auth can-i create pods --as=alterway --namespace=development
 
-</PRE>
+```
 
 
 # 7 
