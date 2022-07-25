@@ -21,7 +21,10 @@ Plusieurs thématiques sont proposées pour ce challenge
 Les check sont fait à partir de tous ce éléments  
 
 
-Ne perdez pas de temps, trouvez systèmatiquement la solutions la moins couteuse possible en terme de temps.  
+⚠️ Les resources que vous créez peuvent mettre un peu de temps pour être disponible. Il faut quelque fois plusieurs appuis sur "Check" pour que la vérification passe  
+
+
+⚠️ Ne perdez pas de temps, trouvez systèmatiquement la solutions la moins couteuse possible en terme de temps.  
 
 ---
 

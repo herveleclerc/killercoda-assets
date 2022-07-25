@@ -20,8 +20,8 @@ function verify_step() {
             --data "{\"alias\":\"strongmind\",
             \"emoji\":\":strongmind:\",
              \"text\":\"Challenge cka-001\",
-            \"attachments\":[{\"title\":\"Réussite du Challenge cka-001 (katacoda)\",
-            \"title_link\":\"https://www.katacoda.com/awh/courses/cka-challenges/cka-001\",\"text\":\"$prenom $nom ($email) a réussi la certification\",\"color\":\"#764FA5\"}]}" \
+            \"attachments\":[{\"title\":\"Réussite du Challenge cka-001 (killercoda)\",
+            \"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-cka-01\",\"text\":\"$prenom $nom ($email) a réussi la certification\",\"color\":\"#764FA5\"}]}" \
             https://rocket.alterway.fr/hooks/QxnH7sqdQwLeby5vP/E5KwEWg88cT8RHrJJifYzdG5wfL5RPySPzKwMxZp$code
             retVal=$?
             if [ $retVal -ne 0 ]
