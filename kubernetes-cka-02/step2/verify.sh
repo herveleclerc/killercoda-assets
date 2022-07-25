@@ -8,7 +8,7 @@ function verify_step() {
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "1:KO >> /opt/.logs/status.log"
+    echo "2:KO >> /opt/.logs/status.log"
     return 0
   fi
 
@@ -24,6 +24,7 @@ function verify_step() {
       if [[ "$request_memory" == "200Mi" ]]
       then
         echo "Verification passed"
+        echo "2:OK" >> "/opt/.logs/status.log"
         return 0
       else
         echo "Verification failed"

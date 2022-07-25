@@ -9,7 +9,7 @@ function verify_step() {
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "1:KO >> /opt/.logs/status.log"
+    echo "12:KO >> /opt/.logs/status.log"
     return 0
   fi
   
@@ -26,6 +26,7 @@ function verify_step() {
     return 1
   else
     echo "Verification passed"
+    echo "12:OK" >> "/opt/.logs/status.log"
     return 0
   fi
   

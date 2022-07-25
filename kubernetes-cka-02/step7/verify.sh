@@ -8,12 +8,10 @@ function verify_step() {
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "1:KO >> /opt/.logs/status.log"
+    echo "7:KO >> /opt/.logs/status.log"
     return 0
   fi
   
-  hostname=$(hostname)
-
   ${kctl} run -n resolver test-resolver --rm -i --image=busybox:1.28 --restart=Never -- nslookup nginx-resolver-service > /opt/expected-nslookup-service.txt
 
   if [[ ! -f /tmp/test-nslookup-service.txt ]]
@@ -30,6 +28,7 @@ function verify_step() {
     return 1
   else
     echo "Verification passed"
+    echo "7:OK" >> "/opt/.logs/status.log"
     return 0
   fi
   

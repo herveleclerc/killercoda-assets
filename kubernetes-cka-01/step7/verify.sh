@@ -4,6 +4,13 @@
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
   
 function verify_step() {
+
+  if [ -f "/opt/.logs/give_up" ]; then
+    echo "give_up file found, exiting"
+    rm -f "/opt/.logs/give_up"
+    echo "7:KO >> /opt/.logs/status.log"
+    return 0
+  fi
   
   hostname=$(hostname)
 
@@ -13,6 +20,7 @@ function verify_step() {
   if [[ "$content" == "Running" ]]
   then
     echo "Verification passed"
+    echo "7:OK" >> "/opt/.logs/status.log"
     return 0
   else
     echo "Verification failed"

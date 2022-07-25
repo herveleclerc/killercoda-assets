@@ -9,7 +9,7 @@ function verify_step() {
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "1:KO >> /opt/.logs/status.log"
+    echo "3:KO >> /opt/.logs/status.log"
     return 0
   fi
 
@@ -22,6 +22,7 @@ function verify_step() {
       if [[ "$capabilities" == "SYS_TIME" ]]
       then
         echo "Verification passed"
+        echo "3:OK" >> "/opt/.logs/status.log"
         return 0
       else
         echo "Verification failed"

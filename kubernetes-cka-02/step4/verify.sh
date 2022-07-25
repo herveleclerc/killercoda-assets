@@ -9,7 +9,7 @@ function verify_step() {
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "1:KO >> /opt/.logs/status.log"
+    echo "4:KO >> /opt/.logs/status.log"
     return 0
   fi
   
@@ -27,6 +27,7 @@ function verify_step() {
       if [[ "$mountpath" == "/data" ]]
       then
         echo "Verification passed"
+        echo "4:OK" >> "/opt/.logs/status.log"
         return 0
       fi
      done

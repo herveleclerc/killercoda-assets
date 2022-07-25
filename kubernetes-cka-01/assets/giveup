@@ -1,0 +1,3 @@
+#!/bin/bash
+
+touch /opt/.logs/give_up
