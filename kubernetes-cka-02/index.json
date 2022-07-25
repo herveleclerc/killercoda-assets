@@ -70,7 +70,7 @@
       {
         "title": "Bien Placé",
         "text": "step10/text.md",
-        "verify": "step10verify.sh"
+        "verify": "step10/verify.sh"
       },
       {
         "title": "Secrets",
