@@ -3,7 +3,7 @@
 
 On vous a fourni au début de ce challenge un code pour valider votre challenge
 
-
+Vous pouvez aussi aller sur la plateforme strongMind dans le menu challenges
 
 Veuillez éditer le fichier suivant: /root/fin-challenge.json
 
