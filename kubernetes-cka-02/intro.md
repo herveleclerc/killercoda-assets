@@ -26,7 +26,7 @@ Plusieurs thématiques sont proposées pour ce challenge
 - Les namespaces  
 - Le fichiers et leur locations  
 
-Les check sont fait à partir de tous ce éléments  
+Les check sont fait à partir de tous ces éléments  
 
 ⚠️ Les resources que vous créez peuvent mettre un peu de temps pour être disponible. Il faut quelque fois plusieurs appuis sur "Check" pour que la vérification passe  
 
