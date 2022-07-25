@@ -2,10 +2,13 @@
 
 
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
-
   
 function verify_step() {
-  content=$(${kctl} get pods --no-headers --selector run=nginx-pod  | grep nginx-pod | awk '{print $3;}')
+  
+  hostname=$(hostname)
+
+  content=$(${kctl} get pod --no-headers --selector run=static-pod  | grep static-pod-${hostname} | awk '{print $3;}')
+  
 
   if [[ "$content" == "Running" ]]
   then
@@ -15,6 +18,7 @@ function verify_step() {
     echo "Verification failed"
     return 1
   fi
+  
 }
 
 verify_step

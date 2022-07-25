@@ -1,20 +1,91 @@
 {
   "title": "Kubernetes Challenge 1",
-  "description": "A challenge to prepare cka certification",
+  "description": "Un challenge pour preparer la certification cka",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "title": "Intro",
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh"
     },
     "steps": [
       {
-        "title": "List all pods",
+        "title": "Déployer un pod",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Déployer un pod avec des labels",
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Déployer un namespace",
+        "text": "step3/text.md",
+        "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Récupérez l'output d'une commande",
+        "text": "step4/text.md",
+        "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Exposer pods via des services",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
+      },
+      {
+        "title": "Replicas",
+        "text": "step6/text.md",
+        "verify": "step6/verify.sh"
+      },
+      {
+        "title": "Déploiements",
+        "text": "step7/text.md",
+        "verify": "step7/verify.sh"
+      },
+      {
+        "title": "Namespaces",
+        "text": "step8/text.md",
+        "verify": "step8/verify.sh"
+      },
+      {
+        "title": "Trouvez et corriger",
+        "text": "step9/text.md",
+        "verify": "step9/verify.sh"
+      },
+      {
+        "title": "Exposer pods via des services",
+        "text": "step10/text.md",
+        "verify": "step10/verify.sh"
+      },
+      {
+        "title": "Utiliser le parseur intégré",
+        "text": "step11/text.md",
+        "verify": "step11/verify.sh"
+      },
+      {
+        "title": "Utiliser le parseur intégré",
+        "text": "step12/text.md",
+        "verify": "step12/verify.sh"
+      },
+      {
+        "title": "Utiliser le parseur intégré",
+        "text": "step12/text.md",
+        "verify": "step12/verify.sh"
       }
     ],
     "finish": {
       "text": "finish.md"
     }
+  },
+  "assets": {
+    "host01": [
+      {"file": "orange-app.yaml", "target": "/root"},
+      {"file": "orange-app-good.yaml", "target": "/opt"},
+      {"file": "pv-analytics.yaml", "target": "/opt"},
+      {"file": "fin-challenge.json", "target": "/root"}
+    ]
   },
   "backend": {
     "imageid": "kubernetes-kubeadm-2nodes"
