@@ -2,8 +2,10 @@
 
 
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
+export ETCDCTL_API=3
+export ectl="etcdctl --endpoints=https://$(hostname -i | awk '{print $1;}'):2379 --cacert="/etc/kubernetes/pki/etcd/ca.crt" --cert=/etc/kubernetes/pki/etcd/healthcheck-client.crt --key=/etc/kubernetes/pki/etcd/healthcheck-client.key"
 
-  
+
 function verify_step() {
   if [ -f "/tmp/etcd-backup.db" ]
   then
