@@ -79,8 +79,8 @@
       },
       {
         "title": "Utiliser le parseur intégré",
-        "text": "step12/text.md",
-        "verify": "step12/verify.sh"
+        "text": "step13/text.md",
+        "verify": "step13/verify.sh"
       }
     ],
     "finish": {
