@@ -1,4 +1,4 @@
 set +x
-{ echo "Waiting for init-background-script to finish"; } 2 > /dev/null
+{ echo "Waiting for init-background-script to finish"; } 2> /dev/null
 while [ ! -f /tmp/background0 ]; do sleep 1; done
-{ echo "Bonjour et Bienvuenue sur Troubeshooting kubernetes 01 !"; } 2 > /dev/null
+{ echo "Bonjour et Bienvuenue sur Troubeshooting kubernetes 01 !"; } 2> /dev/null
