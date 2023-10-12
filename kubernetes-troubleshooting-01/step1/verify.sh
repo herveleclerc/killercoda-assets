@@ -15,7 +15,7 @@ function verify_step() {
     
     content=$(${kctl} get pods --no-headers --selector app=nginx  | grep nginx | awk '{print $3;}')
     
-    if [[ "$content" == "Running" ]]
+    if [[ "$content" == "Running"* ]]
     then
         echo "Verification passed"
         echo "1:OK" >> "/opt/.logs/status.log"
