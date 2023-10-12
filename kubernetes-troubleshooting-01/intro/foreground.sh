@@ -4,6 +4,8 @@ echo "Waiting for init-background-script to finish"
 while [ ! -f /tmp/background0 ]; do sleep 1; done
 echo "Bonjour et Bienvuenue sur Troubeshooting kubernetes 01 !"
 
+unset DEBIAN_FRONTEND
+
 read -p "Votre Prénom ? " PRENOM
 read -p "Votre Nom ? " NOM
 read -p "Votre email ? " EMAIL
