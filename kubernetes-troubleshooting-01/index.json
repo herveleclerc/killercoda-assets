@@ -17,10 +17,15 @@
         {"file": "step5/step5.yaml", "target": "~/step5/", "chmod": "+w"},
         {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
+        {"file": "record.sh", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
       ]
     },
     "steps": [
+      {
+        "title": "Vos coordonnées",
+        "text": "step0/text.md"
+      },
       {
         "title": "Exercice 1",
         "text": "step1/text.md",

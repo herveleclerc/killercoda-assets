@@ -1,18 +1,4 @@
 set +x
-
-echo "Waiting for init-background-script to finish"
+{ echo "Waiting for init-background-script to finish"; } 2 > /dev/null
 while [ ! -f /tmp/background0 ]; do sleep 1; done
-echo "Bonjour et Bienvuenue sur Troubeshooting kubernetes 01 !"
-
-unset DEBIAN_FRONTEND
-
-read -p "Votre Prénom ? " PRENOM
-read -p "Votre Nom ? " NOM
-read -p "Votre email ? " EMAIL
-read -p "Code de vérification ? " CODE
-
-yq e -i ".nom=\"$NOM\"" ~/fin-challenge.json -o json
-yq e -i ".prenom=\"$PRENOM\"" ~/fin-challenge.json -o json
-yq e -i ".email=\"$EMAIL\"" ~/fin-challenge.json -o json
-yq e -i ".code=\"$CODE\"" ~/fin-challenge.json -o json
-
+{ echo "Bonjour et Bienvuenue sur Troubeshooting kubernetes 01 !"; } 2 > /dev/null
