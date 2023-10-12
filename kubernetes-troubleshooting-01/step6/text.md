@@ -4,7 +4,7 @@
 
 Merci de vérifier le fichier suivant et le cas échéant le modifier
 
-`cat ~/fin-challenge.json{{exec}}
+`cat ~/fin-challenge.json`{{exec}}
 
 Notes : 
 
