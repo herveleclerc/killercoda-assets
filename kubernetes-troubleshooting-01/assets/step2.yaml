@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-step2
+  name: nginx
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: nginx-step2
+  template:
+    metadata:
+      labels:
+        app: nginx-step2
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx

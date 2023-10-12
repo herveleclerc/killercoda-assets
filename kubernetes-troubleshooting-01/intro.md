@@ -2,7 +2,9 @@
 
 ## Troubleshooting 01
 
-Des mises en situation pour faire du troubleshooting sur kubernertes
+Des mises en situation pour faire du troubleshooting sur kubernertes.
+
+Les corrections doivent amener à une application fonctionnelle 
 
 ---
 

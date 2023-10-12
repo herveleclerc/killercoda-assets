@@ -10,17 +10,17 @@ function verify_step() {
         echo "give_up file found, exiting"
         rm -f "/opt/.logs/give_up"
         echo "1:KO >> /opt/.logs/status.log"
-        ${kctl} delete --force -f ~/step1/step1.yaml
+        ${kctl} delete --force -f ~/step2/step2.yaml
         return 0
     fi
     
-    content=$(${kctl} get pods --no-headers --selector app=nginx  | grep nginx | awk '{print $3;}')
+    content=$(${kctl} get pods --no-headers --selector app=nginx-step2  | grep nginx | awk '{print $3;}')
     
     if [[ "$content" == "Running"* ]]
     then
         echo "Verification passed"
         echo "1:OK" >> "/opt/.logs/status.log"
-        ${kctl} delete --force -f ~/step1/step1.yaml
+        ${kctl} delete --force -f ~/step2/step2.yaml
         return 0
     else
         echo "Verification failed"

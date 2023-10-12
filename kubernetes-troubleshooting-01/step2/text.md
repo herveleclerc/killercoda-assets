@@ -1,12 +1,12 @@
 
 
 
-### Etape 1 - Déployez le manifeste suivants
+### Étape 2 - Déployez le manifeste suivants
 ```
-kubectl apply -f ~/step1/step1.yaml -n default
+kubectl apply -f ~/step2/step2.yaml -n default
 ```{{exec}}
 
-- Corriger le fichier  ~/step1/step1.yaml
+- Corriger le fichier  ~/step2/step2.yaml
 - Appliquer vos modifications
 - Vérifier en cliquant sur le bouton **Check**
 

@@ -21,6 +21,11 @@
         "title": "Exercice 1",
         "text": "step1/text.md",
         "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Exercice 2",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
       }
     ],
     "finish": {
