@@ -20,10 +20,11 @@ Les checks sont fait à partir de tous ces éléments
 ⚠️ Les resources que vous créez peuvent mettre un peu de temps pour être disponible. Il faut quelque fois plusieurs appuis sur "Check" pour que la vérification passe  
 
 
-⚠️ Ne perdez pas de temps, trouvez systématiquement la solutions la moins couteuse possible en terme de temps.  
-
+⚠️ Ne perdez pas de temps, trouvez systématiquement la solutions la moins couteuse possible en terme de temps.
 
 ⚠️ Utilisez l'éditeur qui possède un terminal intégré
+
+
 ---
 
 Pour rappel 
