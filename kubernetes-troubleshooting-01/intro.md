@@ -22,6 +22,8 @@ Les checks sont fait à partir de tous ces éléments
 
 ⚠️ Ne perdez pas de temps, trouvez systématiquement la solutions la moins couteuse possible en terme de temps.  
 
+
+⚠️ Utilisez l'éditeur qui possède un terminal intégré
 ---
 
 Pour rappel 

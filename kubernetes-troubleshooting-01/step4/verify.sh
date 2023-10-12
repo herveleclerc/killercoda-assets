@@ -18,10 +18,19 @@ function verify_step() {
     
     if [[ "$content" == "Running"* ]]
     then
-        echo "Verification passed"
-        echo "2:OK" >> "/opt/.logs/status.log"
-        ${kctl} delete --force --grace-period=0 -f ~/step4/step4.yaml
-        return 0
+        
+        https_code=$(${kctl} exec deploy/nginx -- curl --write-out %{http_code} --silent --output /dev/null  localhost )
+        
+        if [[ "$https_code" == "200" ]]
+        then
+            echo "Verification passed"
+            echo "2:OK" >> "/opt/.logs/status.log"
+            ${kctl} delete --force --grace-period=0 -f ~/step4/step4.yaml
+            return 0
+        else
+            echo "Verification failed"
+            return 1
+        fi
     else
         echo "Verification failed"
         return 1

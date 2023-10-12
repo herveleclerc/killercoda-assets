@@ -14,6 +14,7 @@
         {"file": "step2/step2.yaml", "target": "~/step2/", "chmod": "+w"},
         {"file": "step3/step3.yaml", "target": "~/step3/", "chmod": "+w"},
         {"file": "step4/step4.yaml", "target": "~/step4/", "chmod": "+w"},
+        {"file": "step5/step5.yaml", "target": "~/step5/", "chmod": "+w"},
         {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
@@ -39,6 +40,11 @@
         "title": "Exercice 4",
         "text": "step4/text.md",
         "verify": "step4/verify.sh"
+      },
+      {
+        "title": "Exercice 5",
+        "text": "step5/text.md",
+        "verify": "step5/verify.sh"
       }
     ],
     "finish": {
