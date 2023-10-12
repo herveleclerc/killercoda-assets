@@ -1,11 +1,12 @@
 #!/bin/bash
 
-
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
+
+NUM_STEP="5"
   
 function verify_step() {
   
-  if [ -f "/root/fin-challenge.json" ]; then
+if [ -f "/root/fin-challenge.json" ]; then
      prenom=$(cat < "/root/fin-challenge.json" | jq -r '.prenom')
      nom=$(cat < "/root/fin-challenge.json" | jq -r '.nom')
      email=$(cat < "/root/fin-challenge.json" | jq -r '.email')
@@ -17,8 +18,8 @@ function verify_step() {
      else
        if [[ "$prenom" != "CHANGEZ-MOI" && "$nom" != "CHANGEZ-MOI" && "$code" != "CHANGEZ-MOI"  && "$email" != "CHANGEZ-MOI" ]]; then
 
-          result=$(grep -c OK /opt/.logs/status.log)
-          p=$(bc <<<"$result*100/12")
+          result=$(grep OK /opt/.logs/status.log | sort | uniq -c)
+          p=$(bc <<<"$result*100/$NUM_STEP")
           if [[ $p -ge 80 ]]; then
             msg="Réussite"
             emo="✨"
@@ -49,12 +50,13 @@ function verify_step() {
           return 1
         fi
      fi
-  else
-    return 1
-  fi
+else
+  return 1
+fi
   
 }
 
 verify_step
 
 exit $?
+

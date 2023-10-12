@@ -8,7 +8,7 @@ Merci de vérifier le fichier suivant et le cas échéant le modifier
 
 Notes : 
 
-- On vous a fourni au début de ce challenge un code pour valider votre challenge
+- Il vous a été fourni au début de ce challenge un code pour valider votre challenge
 
 
 - Pour Alter Way

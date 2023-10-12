@@ -52,9 +52,9 @@
         "verify": "step5/verify.sh"
       },
       {
-        "title": "Bon une dernière étape",
-        "text": "step6/text.md",
-        "verify": "step6/verify.sh"
+        "title": "Bon une dernière étape ! 😀",
+        "text": "step9999/text.md",
+        "verify": "step9999/verify.sh"
       }
     ],
     "finish": {
