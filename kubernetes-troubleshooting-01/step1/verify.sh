@@ -10,7 +10,7 @@ function verify_step() {
         echo "give_up file found, exiting"
         rm -f "/opt/.logs/give_up"
         echo "1:KO >> /opt/.logs/status.log"
-        ${kctl} delete --force -f ~/step1/step1.yaml
+        ${kctl} delete --force --grace-period=0 -f ~/step1/step1.yaml
         return 0
     fi
     
@@ -20,7 +20,7 @@ function verify_step() {
     then
         echo "Verification passed"
         echo "1:OK" >> "/opt/.logs/status.log"
-        ${kctl} delete --force -f ~/step1/step1.yaml
+        ${kctl} delete --force --grace-period=0 -f ~/step1/step1.yaml
         return 0
     else
         echo "Verification failed"

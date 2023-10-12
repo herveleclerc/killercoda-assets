@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-step4
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-step4
+  template:
+    metadata:
+      labels:
+        app: nginx-step4
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources:
+          limits:
+            cpu: "1"
+            memory: "128Mi"
+        ports:
+          - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          periodSeconds: 1
+          failureThreshold: 1
