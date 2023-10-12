@@ -9,7 +9,7 @@ function verify_step() {
     if [ -f "/opt/.logs/give_up" ]; then
         echo "give_up file found, exiting"
         rm -f "/opt/.logs/give_up"
-        echo "1:KO >> /opt/.logs/status.log"
+        echo "2:KO >> /opt/.logs/status.log"
         ${kctl} delete --force -f ~/step2/step2.yaml
         return 0
     fi
@@ -19,7 +19,7 @@ function verify_step() {
     if [[ "$content" == "Running"* ]]
     then
         echo "Verification passed"
-        echo "1:OK" >> "/opt/.logs/status.log"
+        echo "2:OK" >> "/opt/.logs/status.log"
         ${kctl} delete --force -f ~/step2/step2.yaml
         return 0
     else
