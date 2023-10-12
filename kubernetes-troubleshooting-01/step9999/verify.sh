@@ -18,7 +18,7 @@ if [ -f "/root/fin-challenge.json" ]; then
      else
        if [[ "$prenom" != "CHANGEZ-MOI" && "$nom" != "CHANGEZ-MOI" && "$code" != "CHANGEZ-MOI"  && "$email" != "CHANGEZ-MOI" ]]; then
 
-          result=$(grep OK /opt/.logs/status.log | sort | uniq -c)
+          result=$(grep OK /opt/.logs/status.log | sort -u | wc -l)
           p=$(bc <<<"$result*100/$NUM_STEP")
           if [[ $p -ge 80 ]]; then
             msg="Réussite"

@@ -9,7 +9,7 @@ function verify_step() {
     if [ -f "/opt/.logs/give_up" ]; then
         echo "give_up file found, exiting"
         rm -f "/opt/.logs/give_up"
-        echo "2:KO >> /opt/.logs/status.log"
+        echo "5:KO >> /opt/.logs/status.log"
         ${kctl} delete --force --grace-period=0 -f ~/step5/step5.yaml
         return 0
     fi
@@ -28,7 +28,7 @@ function verify_step() {
             if [[ "$https_code_s" == "200" ]]
             then
                 echo "Verification passed"
-                echo "2:OK" >> "/opt/.logs/status.log"
+                echo "5:OK" >> "/opt/.logs/status.log"
                 ${kctl} delete --force --grace-period=0 -f ~/step5/step5.yaml
                 return 0
             else
