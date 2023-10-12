@@ -32,5 +32,7 @@ kubectl cordon controlplane
 kubectl cordon node01
 
 
+kubectl apply -f /opt/.logs/step1.yaml
+
 
 echo "done" > /tmp/background0

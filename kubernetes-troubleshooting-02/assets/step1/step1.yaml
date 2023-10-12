@@ -5,51 +5,20 @@ metadata:
 data:
   nginx.conf: |
     user nginx;
-    worker_processes  3;
-    error_log  /var/log/nginx/error.log;
+    worker_processes  1;
     events {
       worker_connections  10240;
     }
     http {
-      log_format  main
-              'remote_addr:$remote_addr\t'
-              'time_local:$time_local\t'
-              'method:$request_method\t'
-              'uri:$request_uri\t'
-              'host:$host\t'
-              'status:$status\t'
-              'bytes_sent:$body_bytes_sent\t'
-              'referer:$http_referer\t'
-              'useragent:$http_user_agent\t'
-              'forwardedfor:$http_x_forwarded_for\t'
-              'request_time:$request_time';
-      access_log	/var/log/nginx/access.log main;
       server {
           listen       80;
-          server_name  _;
+          server_name  localhost;
           location / {
-              root   html;
-              index  index.html index.htm;
-          }
-      }
-      include /etc/nginx/virtualhost/virtualhost.conf;
-    }
-  virtualhost.conf: |
-    upstream app {
-      server localhost:8080;
-      keepalive 1024;
-    }
-    server {
-      listen 80 default_server;
-      root /usr/local/app;
-      access_log /var/log/nginx/app.access_log main;
-      error_log /var/log/nginx/app.error_log;
-      location / {
-        proxy_pass http://app/;
-        proxy_http_version 1.1;
+            root   /usr/share/nginx/html; #Change this line
+            index  index.html index.htm;
+        }
       }
     }
-
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -67,6 +36,7 @@ spec:
       labels:
         app: nginx
     spec:
+      nodeName: node0i
       nodeSelector:
         nodetype: front
       containers:
@@ -79,7 +49,7 @@ spec:
         ports:
           - containerPort: 80
             name: http
-        nodeName: nodeO1
+      nodeName: nodeO1
 
         volumeMounts:
         - mountPath: /etc/nginx # mount nginx-conf volumn to /etc/nginx
