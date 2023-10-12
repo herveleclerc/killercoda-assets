@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-step3
+  name: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-step3
+  template:
+    metadata:
+      labels:
+        app: nginx-step3
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+        resources:
+          limits:
+            cpu: "32"
+            memory: "128Gi"
