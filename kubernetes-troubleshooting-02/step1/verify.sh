@@ -18,10 +18,43 @@ function verify_step() {
     
     if [[ "$content" == "Running"* ]]
     then
-        echo "Verification passed"
-        echo "1:OK" >> "/opt/.logs/status.log"
-        ${kctl} delete --force --grace-period=0 -f ~/step1/step1.yaml
-        return 0
+        
+        failed=0
+        
+        # node-name node01
+        node=$(${kctl} get pod --no-headers --selector app=nginx -o=custom-columns=NODE:.spec.nodeName)
+        
+        if [[ "$node" != "node01" ]]
+        then
+            failed=1
+        fi
+        
+        # Check taints a here
+        
+        taints=$(${kctl} get nodes -o go-template='{{printf "%-50s %-12s\n" "Node" "Taint"}}{{- range .items}}{{- if $taint := (index .spec "taints") }}{{- .metadata.name }}{{ "\t" }}{{- range $taint }}{{- .key }}={{ .value }}:{{ .effect }}{{ "\t" }}{{- end }}{{- "\n" }}{{- end}}{{- end}}' | grep dedicated=front:NoSchedule| wc-l)
+        
+        if [[ "$taints" -ne 2 ]]
+        then
+            failed=1
+        fi
+        
+        nodetype=$(${kctl} get pod --no-headers --selector app=nginx -o=custom-columns=NODE:.spec.nodeSelector.nodetype)
+        
+        if [[ "$nodetype" != "front" ]]
+        then
+            failed=1
+        fi
+        
+        if [[ "$failed" -eq 0 ]];
+        then
+            echo "Verification passed"
+            echo "1:OK" >> "/opt/.logs/status.log"
+            ${kctl} delete --force --grace-period=0 -f ~/step1/step1.yaml
+            return 0
+        else
+            echo "Verification failed"
+            return 1
+        fi
     else
         echo "Verification failed"
         return 1
