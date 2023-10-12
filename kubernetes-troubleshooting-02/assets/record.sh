@@ -12,3 +12,11 @@ yq e -i ".code=\"$CODE\"" ~/fin-challenge.json -o json
 
 
 cat ~/fin-challenge.json
+
+
+curl --fail -X POST -H 'Content-Type: application/json' \
+--data "{\"channel\":\"aw-strongmind\",
+\"icon_url\":\"https://assets.alterway.fr/2021/01/LOGO_STRONG_MIND.png\",
+\"attachments\":[{\"title\":\"$prenom $nom ($email) tente le test k8s troubleshooting #2 (killercoda)\",
+\"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-troubleshooting-01\"}]}" \
+https://mattermost.smile.fr/hooks/dhke1xbdy7g3bfwaxynb$code
