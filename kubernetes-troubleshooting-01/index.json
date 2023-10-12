@@ -24,8 +24,8 @@
       },
       {
         "title": "Exercice 2",
-        "text": "step1/text.md",
-        "verify": "step1/verify.sh"
+        "text": "step2/text.md",
+        "verify": "step2/verify.sh"
       }
     ],
     "finish": {
