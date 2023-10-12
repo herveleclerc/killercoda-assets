@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: elliphant
+  name: elliphant
+  namespace: default
+spec:
+  containers:
+  - name: elliphant
+    image: redis:alpine
+    resources:
+      requests:
+        cpu: "0.25"
+        memory: "200Mi"
