@@ -10,7 +10,7 @@
     },
     "assets": {
       "host01": [
-        {"file": "step1/step1.yaml", "target": "~/step1/", "chmod": "+w"},
+        {"file": "step1.yaml", "target": "~/step1/", "chmod": "+w"},
         {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
