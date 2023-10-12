@@ -1,7 +1,7 @@
 
 
 
-### Étape 2 - Déployez le manifeste suivants
+### Étape 2 - Déployez le manifeste suivant
 ```
 kubectl apply -f ~/step2/step2.yaml -n default
 ```{{exec}}
