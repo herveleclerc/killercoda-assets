@@ -1,0 +1,43 @@
+{
+  "title": "k8s troubleshooting - 02",
+  "description": "Troubeshooting 02",
+  "details": {
+    "intro": {
+      "title": "Intro",
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh"
+    },
+    "assets": {
+      "host01": [
+        {"file": "step1/step1.yaml", "target": "/opt/.logs/", "chmod": "+w"},
+        {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"},
+        {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
+        {"file": "record.sh", "target": "/usr/local/bin/", "chmod": "+rx"},
+        {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
+      ]
+    },
+    "steps": [
+      {
+        "title": "Vos coordonnées",
+        "text": "step0/text.md"
+      },
+      {
+        "title": "A vous de jouer !",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Bon une dernière étape ! 😀",
+        "text": "step9999/text.md",
+        "verify": "step9999/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes-rapid"
+  }
+}
