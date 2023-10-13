@@ -16,4 +16,8 @@
 - Les "problèmes" peuvent être multiples et être n'importe où.
 
 
-**Aller let's go !!!! Bon courage**  💪
+**Il se peut que vous "plantiez" complètement le cluster k8s,  dans ce cas relancez une instance killecoda.**
+
+---
+
+**Allons-y let's go !!!! Bon courage**  💪
