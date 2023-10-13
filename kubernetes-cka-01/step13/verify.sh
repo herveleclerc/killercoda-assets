@@ -28,12 +28,13 @@ function verify_step() {
           fi
 
           curl --fail -X POST -H 'Content-Type: application/json' \
-            --data "{\"alias\":\"strongmind\",
+            --data "{\"channel\":\"aw-strongmind\",
             \"emoji\":\":strongmind:\",
-             \"text\":\"Challenge cka-001\",
-            \"attachments\":[{\"title\":\"$emo $msg du Challenge cka-001 (killercoda) avec un score de $p%\",
-            \"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-cka-01\",\"text\":\"$prenom $nom ($email) a passé la certification cka-001 avec un résultat de $p% ($msg)\",\"color\":\"#764FA5\"}]}" \
-            https://rocket.alterway.fr/hooks/QxnH7sqdQwLeby5vP/E5KwEWg88cT8RHrJJifYzdG5wfL5RPySPzKwMxZp$code
+             \"icon_url\":\"https://assets.alterway.fr/2021/01/LOGO_STRONG_MIND.png\",
+            \"attachments\":[{\"title\":\"$emo $msg pour $prenom $nom ($email) a passé la certification cka-001 (killercoda) avec un score de $p%\",
+            \"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-troubleshooting-01\"}]}" \
+            https://mattermost.smile.fr/hooks/dhke1xbdy7g3bfwaxynb$code
+
             retVal=$?
             if [ $retVal -ne 0 ]
             then

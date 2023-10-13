@@ -39,7 +39,7 @@ if [ -f "/root/fin-challenge.json" ]; then
             --data "{\"channel\":\"aw-strongmind\",
             \"emoji\":\":strongmind:\",
              \"icon_url\":\"https://assets.alterway.fr/2021/01/LOGO_STRONG_MIND.png\",
-            \"attachments\":[{\"title\":\"$emo $msg pour $prenom $nom ($email) sur le test k8s troubleshooting #1 (killercoda) avec un score de $p%\",
+            \"attachments\":[{\"title\":\"$emo $msg pour $prenom $nom ($email) sur le test k8s troubleshooting #2 (killercoda) avec un score de $p%\",
             \"title_link\":\"https://killercoda.com/hleclerc/scenario/kubernetes-troubleshooting-01\"}]}" \
             https://mattermost.smile.fr/hooks/dhke1xbdy7g3bfwaxynb$code
             retVal=$?

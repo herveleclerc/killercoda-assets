@@ -18,10 +18,15 @@
         {"file": "pvc-1.yaml", "target": "/opt/.logs/"},
         {"file": "alterway-user.yaml.tpl", "target": "/opt/.logs/"},
         {"file": "fin-challenge.json", "target": "/root/"},
+        {"file": "record.sh", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"}
       ]
     },
     "steps": [
+      {
+        "title": "Vos coordonnées",
+        "text": "step0/text.md"
+      },
       {
         "title": "etcd",
         "text": "step1/text.md",

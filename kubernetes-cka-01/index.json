@@ -15,10 +15,15 @@
         {"file": "pv-analytics.yaml", "target": "/opt/"},
         {"file": "fin-challenge.json", "target": "~/", "chmod": "+w"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
+        {"file": "record.sh", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
       ]
     },
     "steps": [
+      {
+        "title": "Vos coordonnées",
+        "text": "step0/text.md"
+      },
       {
         "title": "Déployer un pod",
         "text": "step1/text.md",

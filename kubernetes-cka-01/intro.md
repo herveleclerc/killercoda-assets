@@ -25,7 +25,9 @@ Les check sont fait à partir de tous ces éléments
 (Vérifier aussi l'état des resources kubernetes)
 
 
-⚠️ Ne perdez pas de temps, trouvez systèmatiquement la solutions la moins couteuse possible en terme de temps.  
+⚠️ Ne perdez pas de temps, trouvez systèmatiquement la solutions la moins couteuse possible en terme de temps.
+
+⚠️ Utilisez l'éditeur disponible (Theia) qui possède un terminal intégré.
 
 ---
 
