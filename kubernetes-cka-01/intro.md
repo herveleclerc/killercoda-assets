@@ -21,7 +21,8 @@ Plusieurs thématiques sont proposées pour ce challenge
 Les check sont fait à partir de tous ces éléments  
 
 
-⚠️ Les resources que vous créez peuvent mettre un peu de temps pour être disponible. Il faut quelque fois plusieurs appuis sur "Check" pour que la vérification passe  
+⚠️ Les resources que vous créez peuvent mettre un peu de temps pour être disponibles. Il faut quelques fois plusieurs "click" sur le bouton "Check" pour que la vérification passe  !
+(Vérifier aussi l'état des resources kubernetes)
 
 
 ⚠️ Ne perdez pas de temps, trouvez systèmatiquement la solutions la moins couteuse possible en terme de temps.  
