@@ -31,7 +31,7 @@ function verify_step() {
         
         # Check taints a here
         
-        taints=$(${kctl} get nodes -o go-template='{{printf "%-50s %-12s\n" "Node" "Taint"}}{{- range .items}}{{- if $taint := (index .spec "taints") }}{{- .metadata.name }}{{ "\t" }}{{- range $taint }}{{- .key }}={{ .value }}:{{ .effect }}{{ "\t" }}{{- end }}{{- "\n" }}{{- end}}{{- end}}' | grep dedicated=front:NoSchedule| wc-l)
+        taints=$(${kctl} get nodes -o go-template='{{printf "%-50s %-12s\n" "Node" "Taint"}}{{- range .items}}{{- if $taint := (index .spec "taints") }}{{- .metadata.name }}{{ "\t" }}{{- range $taint }}{{- .key }}={{ .value }}:{{ .effect }}{{ "\t" }}{{- end }}{{- "\n" }}{{- end}}{{- end}}' | grep dedicated=front:NoSchedule| wc -l)
         
         if [[ "$taints" -ne 2 ]]
         then
@@ -49,7 +49,6 @@ function verify_step() {
         then
             echo "Verification passed"
             echo "1:OK" >> "/opt/.logs/status.log"
-            ${kctl} delete --force --grace-period=0 -f ~/step1/step1.yaml
             return 0
         else
             echo "Verification failed"
