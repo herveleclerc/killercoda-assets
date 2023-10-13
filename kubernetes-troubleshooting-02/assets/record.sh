@@ -13,6 +13,11 @@ yq e -i ".code=\"$CODE\"" ~/fin-challenge.json -o json
 
 cat ~/fin-challenge.json
 
+prenom=$(cat < "/root/fin-challenge.json" | jq -r '.prenom')
+nom=$(cat < "/root/fin-challenge.json" | jq -r '.nom')
+email=$(cat < "/root/fin-challenge.json" | jq -r '.email')
+code=$(cat < "/root/fin-challenge.json" | jq -r '.code')
+
 
 curl --fail -X POST -H 'Content-Type: application/json' \
 --data "{\"channel\":\"aw-strongmind\",
