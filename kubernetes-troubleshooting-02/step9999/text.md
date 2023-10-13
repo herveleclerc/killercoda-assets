@@ -1,5 +1,5 @@
 
-### Fin de Parcours
+### Fin de Parcours / Vérifications
 
 
 Merci de vérifier le fichier suivant et le cas échéant le modifier
@@ -12,7 +12,8 @@ Notes :
 
 
 - Pour Alter Way
-  - Vous pouvez aussi aller sur la plateforme StrongMind dans le menu challenges
+  - Vous pouvez aussi aller sur la plateforme StrongMind dans le menu
+  - Ou mieux sur Mattermost ([AW] StrongMind) (https://mattermost.smile.fr/alterway/channels/aw-strongmind) le code est dans le bandeau du Chan
 
 
 Veuillez éditer le fichier suivant: `/root/fin-challenge.json` si besoin
