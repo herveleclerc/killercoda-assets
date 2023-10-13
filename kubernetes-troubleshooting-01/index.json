@@ -62,6 +62,6 @@
     }
   },
   "backend": {
-    "imageid": "kubernetes-kubeadm-2nodes-rapid"
+    "imageid": "kubernetes-kubeadm-2nodes"
   }
 }
