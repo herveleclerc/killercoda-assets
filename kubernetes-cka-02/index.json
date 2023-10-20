@@ -5,8 +5,8 @@
     "intro": {
       "title": "Intro",
       "text": "intro.md",
-      "foreground": "intro/foreground.sh",
-      "background": "intro/background.sh"
+      "code": "intro/foreground.sh",
+      "courseData": "intro/background.sh"
     },
     "assets": {
       "host01": [
