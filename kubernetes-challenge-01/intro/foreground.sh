@@ -5,6 +5,6 @@ echo "Waiting for init-background-script to finish"
 
 while [ ! -f /tmp/background0 ]; do sleep 1; done
 
-printf "✅ Done \n"
+echo "✅ Done"
 
-echo "Bonjour et Bienvuenue sur le challenge kubernetes n° 01 !"
+echo "Bonjour et Bienvuenue sur le challenge recrutement n° 01 !"
