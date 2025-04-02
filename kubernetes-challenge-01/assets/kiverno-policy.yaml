@@ -1,0 +1,15 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: deny-networkpolicy-deletion
+spec:
+  validationFailureAction: Enforce  # Applique strictement la règle
+  rules:
+  - name: block-networkpolicy-delete
+    match:
+      resources:
+        kinds:
+        - networking.k8s.io/v1/NetworkPolicy  # Cible les NetworkPolicies
+    validate:
+      message: "Suppression des NetworkPolicies interdite !"
+      deny: {}

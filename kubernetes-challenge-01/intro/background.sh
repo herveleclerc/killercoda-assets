@@ -5,6 +5,10 @@
 echo starting... # to test stdout output in /var/log/killercoda
 
 
+helm repo add kyverno https://kyverno.github.io/kyverno/
+helm repo update
+helm install kyverno kyverno/kyverno -n kyverno --create-namespace --wait --timeout 300s
+
 
 DEPLOYMENT_NAME="backend-deployment"
 NAMESPACE="default"
@@ -16,6 +20,8 @@ kubectl apply -f /root/backend-deployment.yaml
 kubectl apply -f /root/backend-service.yaml
 kubectl apply -f /root/backend-netpol-broken.yaml
 kubectl apply -f /root/frontend-deployment.yaml
+
+kubectl apply -f /root/kyverno-policy.yaml
 
 echo "🔍 Attente du Pod du déploiement '$DEPLOYMENT_NAME' dans le namespace '$NAMESPACE'..."
 
@@ -46,5 +52,7 @@ rm -f /root/backend-deployment.yaml
 rm -f /root/backend-service.yaml
 rm -f /root/backend-netpol-broken.yaml
 rm -f /root/frontend-deployment.yaml
+rm -f /root/kyverno-policy.yaml
+
 
 echo "done" > /tmp/background0
