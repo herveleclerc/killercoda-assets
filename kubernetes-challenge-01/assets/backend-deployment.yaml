@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: backend-container
-        image: alterway/nginx-challenge
+        image: alterway/nginx-challenge:1.0
         env:
         - name: MESSAGE
           value: "AWCC" 
