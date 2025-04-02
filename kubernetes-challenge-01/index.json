@@ -14,7 +14,7 @@
         {"file": "backend-service.yaml", "target": "~/", "chmod": "+w"},
         {"file": "backend-netpol-broken.yaml", "target": "~/", "chmod": "+w"},
         {"file": "frontend-deployment.yaml", "target": "~/", "chmod": "+w"},
-        {"file": "kiverno-policy.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "kyverno-policy.yaml", "target": "~/", "chmod": "+w"},
         {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
         {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
       ]

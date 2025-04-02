@@ -12,4 +12,8 @@ spec:
         - networking.k8s.io/v1/NetworkPolicy  # Cible les NetworkPolicies
     validate:
       message: "Suppression des NetworkPolicies interdite !"
-      deny: {}
+      deny: # Interdit l'action si c'est un delete
+          conditions:
+            - key: "{{ request.operation }}"
+              operator: Equals
+              value: DELETE
