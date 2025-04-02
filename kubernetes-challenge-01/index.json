@@ -1,5 +1,5 @@
 {
-  "title": "Kubernetes Challenge recrutement n°1",
+  "title": "Kubernetes Challenge recrutements n°1",
   "description": "Un challenge pour les recrutements AWCC",
   "details": {
     "intro": {
@@ -8,7 +8,7 @@
       "foreground": "intro/foreground.sh",
       "background": "intro/background.sh"
     },
-    "assets": {s
+    "assets": {
       "host01": [
         {"file": "backend-deployment.yaml", "target": "~/", "chmod": "+w"},
         {"file": "backend-service.yaml", "target": "~/", "chmod": "+w"},

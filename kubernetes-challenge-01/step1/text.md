@@ -1,4 +1,3 @@
-
 ### Trouver le message !
 
 À vous de jouer ! :
