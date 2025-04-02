@@ -18,4 +18,4 @@ Pour rappel
 
 **Note : l'initialisation peut être assez longue**
 
-Ce Challenge se termine automatiquement 60 minutes. 🍀 **Good luck!** 🍀
+Ce Challenge se termine automatiquement dans 60 minutes. 🍀 **Good luck!** 🍀
