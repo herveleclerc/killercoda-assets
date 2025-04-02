@@ -39,7 +39,7 @@ fi
 
 echo "🚀 Continuation des étapes suivantes..."
 
-kubectl exec -it $(kubectl get pods -n $NAMESPACE -l app=backend --field-selector=status.phase=Running -o jsonpath='{.items[0].metadata.name}') -- /bin/bash -c 'echo "AlterWay2025-AWCC" > /usr/share/nginx/html/index.html'
+kubectl exec -it $(kubectl get pods -n $NAMESPACE -l app=backend --field-selector=status.phase=Running -o jsonpath='{.items[0].metadata.name}') -- /bin/sh -c 'echo "AlterWay2025-AWCC" > /usr/share/nginx/html/index.html'
 
 
 rm -f /root/backend-deployment.yaml

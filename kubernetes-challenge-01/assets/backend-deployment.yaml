@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: backend-container
-        image: httpd:2.4 # Image simple qui écoute sur le port 80
+        image: alterway/nginx-challenge # Image simple qui écoute sur le port 80
         ports:
         - containerPort: 80 # Le conteneur écoute sur le port 80
