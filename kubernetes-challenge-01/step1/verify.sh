@@ -20,7 +20,7 @@ spec:
   - from:
     - podSelector:
         matchLabels:
-          app: frontend
+          app: frontend-app
     ports:
     - protocol: TCP
       port: 80
@@ -29,8 +29,30 @@ EOF
       return 1
     else
         echo "NetworkPolicy backend-allow-frontend already exists."
+        return 0
     fi
 }
+
+ensure_label(){
+  # Vérifier si la NetworkPolicy existe
+if ! kubectl get networkpolicy "$NETWORK_POLICY_NAME" &>/dev/null; then
+    echo "NetworkPolicy $NETWORK_POLICY_NAME does not exist."
+   return 1
+fi
+
+# Extraire le champ matchLabels.app des règles from[].podSelector
+APP_LABEL=$(kubectl get networkpolicy "$NETWORK_POLICY_NAME" -o jsonpath='{.spec.ingress[*].from[*].podSelector.matchLabels.app}')
+
+# Vérifier si frontend est bien présent
+if [[ "$APP_LABEL" == "frontend" ]]; then
+    echo "✅ La NetworkPolicy contient bien 'frontend' dans les règles Ingress."
+    return 0
+else
+    echo "❌ ERREUR : La NetworkPolicy ne contient PAS 'frontend'."
+    return 1
+fi
+}
+
 
 function verify_step() {
     if [ -f "/opt/.logs/give_up" ]; then
@@ -54,7 +76,10 @@ function verify_step() {
 }
 
 # Vérifier et créer la NetworkPolicy si nécessaire
-ensure_network_policy
+ensure_network_policy || exit $?
+
+# Vérifier si le label est correct
+ensure_label || exit $?
 
 # Exécuter la vérification
 verify_step
