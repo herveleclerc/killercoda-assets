@@ -1,0 +1,24 @@
+# backend-netpol-broken.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: backend-allow-frontend
+spec:
+  podSelector: # Applique cette politique aux pods...
+    matchLabels:
+      app: backend # ...avec le label app=backend (les pods backend)
+  policyTypes:
+  - Ingress # Concerne uniquement le trafic entrant
+  ingress:
+  - from: # Autorise le trafic entrant DEPUIS...
+    - podSelector: # ...les pods qui correspondent à ce sélecteur
+        matchLabels:
+          # ERREUR SUBTILE ICI : Mauvais label !
+          app: frontend-access # Devrait être app=frontend
+      # Si on était dans des namespaces différents, il faudrait aussi :
+      # namespaceSelector:
+      #   matchLabels:
+      #     name: frontend-namespace
+    ports: # ...SUR ce port/protocole
+    - protocol: TCP
+      port: 80 # Le port 80 du pod backend

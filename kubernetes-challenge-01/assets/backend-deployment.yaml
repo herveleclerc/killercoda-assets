@@ -1,0 +1,22 @@
+# backend-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend # <- Label important
+  template:
+    metadata:
+      labels:
+        app: backend # <- Label important
+        # Label supplémentaire pour la NetworkPolicy (piège potentiel)
+        role: database-server
+    spec:
+      containers:
+      - name: backend-container
+        image: httpd:2.4 # Image simple qui écoute sur le port 80
+        ports:
+        - containerPort: 80 # Le conteneur écoute sur le port 80

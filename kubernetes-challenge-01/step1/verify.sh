@@ -2,34 +2,29 @@
 
 
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
+
   
 function verify_step() {
 
   if [ -f "/opt/.logs/give_up" ]; then
     echo "give_up file found, exiting"
     rm -f "/opt/.logs/give_up"
-    echo "8:KO >> /opt/.logs/status.log"
+    echo "1:KO >> /opt/.logs/status.log"
     return 0
   fi
+
+  content=$(cat /tmp/backend-message.txt 2>/dev/null | grep "AlterWay2025-AWCC")
   
-  if [[ ! -f "/tmp/pod-over-request.txt" ]]
-  then
-    echo "Verification failed"
-    return 2
-  fi
- 
-  c=$(grep -c "requested:.*requests.memory=1500M,.*used:.*requests.memory=0,.*limited:.*requests.memory=1G" /tmp/pod-over-request.txt)
-  
-  if [[ "$c" == "1" ]]
+
+  if [[ "$content" == "AlterWay2025-AWCC" ]]
   then
     echo "Verification passed"
-    echo "8:OK" >> "/opt/.logs/status.log"
+    echo "1:OK" >> "/opt/.logs/status.log"
     return 0
   else
     echo "Verification failed"
     return 1
   fi
-  
 }
 
 verify_step

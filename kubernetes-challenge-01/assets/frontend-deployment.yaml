@@ -1,0 +1,21 @@
+# frontend-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend # <- Label important
+  template:
+    metadata:
+      labels:
+        app: frontend # <- Label important
+    spec:
+      containers:
+      - name: frontend-container
+        image: nginx:alpine # Une image simple
+        # On pourrait ajouter une commande pour tenter de joindre le backend en boucle,
+        # mais pour le challenge, on demandera au candidat de tester manuellement.
+        command: ["/bin/sh", "-c", "sleep 3600"] # Garde le pod en vie

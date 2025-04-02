@@ -13,6 +13,7 @@ function verify_step() {
   fi
   
   ${kctl} run -n resolver test-resolver --rm -i --image=busybox:1.28 --restart=Never -- nslookup nginx-resolver-service > /opt/expected-nslookup-service.txt
+  sed -i '$ d' /opt/expected-nslookup-service.txt
 
   if [[ ! -f /tmp/test-nslookup-service.txt ]]
   then

@@ -1,0 +1,35 @@
+{
+  "title": "Kubernetes Challenge - 1",
+  "description": "Un challenge pour les recrutement alter way cloud consulting",
+  "details": {
+    "intro": {
+      "title": "Intro",
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh"
+    },
+    "assets": {
+      "host01": [
+        {"file": "backend-deployment.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "backend-service.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "backend-netpol-broken.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "frontend-deployment.yaml", "target": "~/", "chmod": "+w"},
+        {"file": "giveup", "target": "/usr/local/bin/", "chmod": "+rx"},
+        {"file": "status.log", "target": "/opt/.logs/", "chmod": "+rx"}
+      ]
+    },
+    "steps": [
+      {
+        "title": "A vous de jouer",
+        "text": "step1/text.md",
+        "verify": "step1/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-2nodes"
+  }
+}

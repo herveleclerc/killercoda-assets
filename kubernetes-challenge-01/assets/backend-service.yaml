@@ -1,0 +1,13 @@
+# backend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend # <- Sélectionne les pods backend via ce label
+  ports:
+  - protocol: TCP
+    port: 80       # Le service écoute sur le port 80
+    targetPort: 80 # Le service redirige vers le port 80 des pods
+  type: ClusterIP
