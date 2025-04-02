@@ -1,17 +1,17 @@
 ## Challenge Recrutement 1
  
-Le Scénario du Challenge
+**Le Scénario du Challenge**
 
-Objectif : Un pod "frontend" doit pouvoir communiquer avec un pod "backend" via un Service Kubernetes.
+**Objectif :** Un pod "frontend" doit pouvoir communiquer avec un pod "backend" via un Service Kubernetes.
 
-Le Problème : La communication échoue.
+**Le Problème :** La communication échoue.
 
 
-Le candidat doit diagnostiquer pourquoi et corriger le problème.
+**Le candidat doit diagnostiquer pourquoi et corriger le problème.**
 
 ---
 
-Pour rappel 
+**Pour rappel :**
 
 - [Documentation k8s](https://kubernetes.io/docs/home/)
 - [Cheat Sheet k8s](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)

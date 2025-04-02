@@ -6,4 +6,4 @@
 
 - Notez le code
 
-- Appuyer sur le bouton "Check" pour finir
+- Appuyer sur le bouton "**Check**" pour finir
