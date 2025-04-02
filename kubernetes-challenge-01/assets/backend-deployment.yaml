@@ -17,6 +17,9 @@ spec:
     spec:
       containers:
       - name: backend-container
-        image: alterway/nginx-challenge # Image simple qui écoute sur le port 80
+        image: alterway/nginx-challenge
+        env:
+        - name: MESSAGE
+          value: "AWCC" 
         ports:
         - containerPort: 80 # Le conteneur écoute sur le port 80
