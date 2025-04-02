@@ -1,6 +1,10 @@
 
-### Déployer un pod 
+### Trouver le message !
 
-A vous de jouer ! :
+À vous de jouer ! :
 
-Écrire le résultat de la commande `curl -s http://backend-service` dans le fichier /tmp/backend-message.txt cette commande devra être executée depuis le pod du `frontend`
+- Écrire le résultat de la commande `curl -s http://backend-service` dans le fichier /tmp/backend-message.txt cette commande devra être executée depuis le pod du `frontend`
+
+- Notez le code
+
+- Appuyer sur le bouton "Check" pour finir

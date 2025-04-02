@@ -1,6 +1,6 @@
 {
-  "title": "Kubernetes Challenge - 1",
-  "description": "Un challenge pour les recrutement alter way cloud consulting",
+  "title": "Kubernetes Challenge recrutement n°1",
+  "description": "Un challenge pour les recrutements AWCC",
   "details": {
     "intro": {
       "title": "Intro",
@@ -8,7 +8,7 @@
       "foreground": "intro/foreground.sh",
       "background": "intro/background.sh"
     },
-    "assets": {
+    "assets": {s
       "host01": [
         {"file": "backend-deployment.yaml", "target": "~/", "chmod": "+w"},
         {"file": "backend-service.yaml", "target": "~/", "chmod": "+w"},

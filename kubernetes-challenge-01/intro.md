@@ -1,6 +1,4 @@
-Ces challenges vont vous permettre de préparer la certification CKA
-
-## Challenge
+## Challenge Recrutement 1
  
 Le Scénario du Challenge
 
