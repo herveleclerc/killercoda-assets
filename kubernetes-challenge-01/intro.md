@@ -16,4 +16,7 @@ Pour rappel
 - [Documentation k8s](https://kubernetes.io/docs/home/)
 - [Cheat Sheet k8s](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
+**
+Note : l'initialisation peut être assez longue**
+
 Ce Challenge se termine automatiquement 60 minutes. 🍀 **Good luck!** 🍀
