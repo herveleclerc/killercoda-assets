@@ -25,6 +25,8 @@ spec:
     - protocol: TCP
       port: 80
 EOF
+      echo "Verification failed"
+      return 1
     else
         echo "NetworkPolicy backend-allow-frontend already exists."
     fi

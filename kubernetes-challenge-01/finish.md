@@ -5,6 +5,8 @@
 
 
 
-Donnez le code reçu à la personne qui vous fait passer l'entretien !
+Donnez le code KAWCC-CHECK001 et la chaine de caractère que le backend vous a donné
+
+reçu à la personne qui vous fait passer l'entretien ! 
 
 
