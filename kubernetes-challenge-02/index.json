@@ -18,9 +18,9 @@
       }
     },
     "backend": {
-      "imageid": "kubernetes-kubeadm-2nodes-rapid", // Utilise une image K8s avec 1 control-plane et 1 worker
-      "background": "setup.sh", // Lance ce script en arrière-plan avant de donner l'accès
-      "verifications": [ // Définit comment vérifier la réussite
+      "imageid": "kubernetes-kubeadm-2nodes-rapid",
+      "background": "setup.sh",
+      "verifications": [ 
           {
               "name": "Vérification du Flag",
               "script": "verify.sh"
@@ -28,7 +28,7 @@
       ]
     },
     "interface": {
-      "uilayout": "editor-terminal", // Affiche un éditeur de texte et un terminal
+      "uilayout": "editor-terminal",
       "hideHiddenFiles": true
     }
   }
