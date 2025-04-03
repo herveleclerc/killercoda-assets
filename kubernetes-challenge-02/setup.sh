@@ -32,8 +32,8 @@ spec:
       automountServiceAccountToken: true
       containers:
       - name: frontend-container
-        # Image avec curl et kubectl. rockylinux/rockylinux est une option, ou utiliser une image dédiée si dispo sur Killercoda
-        image: bitnami/kubectl:latest # Cette image contient kubectl et curl
+        # Image avec curl
+        image: alpine:latest 
         command: ["sleep", "3600"]
 EOF
 
@@ -118,3 +118,5 @@ echo "## Environnement Kubernetes prêt pour le challenge ! ##"
 echo "#####################################################"
 echo ""
 echo "Suivez les instructions dans l'onglet de gauche pour commencer."
+
+exit 0
