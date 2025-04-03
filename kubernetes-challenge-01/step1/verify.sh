@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+export NETWORK_POLICY_NAME="backend-allow-frontend"
+
 export kctl="/usr/bin/kubectl --kubeconfig=/root/.kube/config"
 
 function ensure_network_policy() {
@@ -62,9 +65,9 @@ function verify_step() {
         return 0
     fi
 
-    content=$(cat /tmp/backend-message.txt 2>/dev/null | grep "AlterWay2025-AWCC")
+    content=$(cat /tmp/backend-message.txt 2>/dev/null | grep "ALTERWAY2025-AWCC")
   
-    if [[ "$content" == "AlterWay2025-AWCC" ]]
+    if [[ "$content" == "ALTERWAY2025-AWCC" ]]
     then
         echo "Verification passed"
         echo "1:OK" >> "/opt/.logs/status.log"
