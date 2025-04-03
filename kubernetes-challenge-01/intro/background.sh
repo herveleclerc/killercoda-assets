@@ -16,12 +16,12 @@ TIMEOUT=60  # Temps max d'attente en secondes
 INTERVAL=5  # Intervalle entre chaque vérification
 
 
-kubectl apply -f /root/backend-deployment.yaml
-kubectl apply -f /root/backend-service.yaml
-kubectl apply -f /root/backend-netpol-broken.yaml
-kubectl apply -f /root/frontend-deployment.yaml
+kubectl apply -f /tmp/backend-deployment.yaml
+kubectl apply -f /tmp/backend-service.yaml
+kubectl apply -f /tmp/backend-netpol-broken.yaml
+kubectl apply -f /tmp/frontend-deployment.yaml
 
-kubectl apply -f /root/kyverno-policy.yaml
+kubectl apply -f /tmp/kyverno-policy.yaml
 
 echo "🔍 Attente du Pod du déploiement '$DEPLOYMENT_NAME' dans le namespace '$NAMESPACE'..."
 
@@ -48,11 +48,11 @@ echo "🚀 Continuation des étapes suivantes..."
 kubectl exec -it $(kubectl get pods -n $NAMESPACE -l app=backend --field-selector=status.phase=Running -o jsonpath='{.items[0].metadata.name}') -- /bin/sh -c 'echo "AlterWay2025-AWCC" > /usr/share/nginx/html/index.html'
 
 
-rm -f /root/backend-deployment.yaml
-rm -f /root/backend-service.yaml
-rm -f /root/backend-netpol-broken.yaml
-rm -f /root/frontend-deployment.yaml
-rm -f /root/kyverno-policy.yaml
+rm -f /tmp/backend-deployment.yaml
+rm -f /tmp/backend-service.yaml
+rm -f /tmp/backend-netpol-broken.yaml
+rm -f /tmp/frontend-deployment.yaml
+rm -f /tmp/kyverno-policy.yaml
 
 
 echo "done" > /tmp/background0
