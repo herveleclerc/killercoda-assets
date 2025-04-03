@@ -3,7 +3,10 @@ set +H
 
 echo "Waiting for init-background-script to finish"
 
-while [ ! -f /tmp/background0 ]; do sleep 1; done
+while [ ! -f /tmp/background0 ]; do 
+echo "Init en cours..."
+sleep 1; 
+done
 
 echo "✅ Done"
 
