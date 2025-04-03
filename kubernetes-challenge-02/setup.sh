@@ -15,10 +15,11 @@ echo "--> Création des fichiers de configuration Kubernetes..."
 # 1. Deployment du Pod compromis (point d'entrée)
 cat << EOF > compromised-pod-deployment.yaml
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: frontend-app
 spec:
+  serviceName: frontend-app
   replicas: 1
   selector:
     matchLabels:
@@ -112,6 +113,9 @@ kubectl apply -f secret-holder-pod.yaml
 echo "--> Attente du démarrage des pods..."
 kubectl wait --for=condition=ready deployment/frontend-app --timeout=180s -n default
 kubectl wait --for=condition=ready pod/legacy-internal-db --timeout=180s -n default
+
+
+
 
 echo "#####################################################"
 echo "## Environnement Kubernetes prêt pour le challenge ! ##"
