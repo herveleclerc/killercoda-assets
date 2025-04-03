@@ -110,7 +110,7 @@ kubectl apply -f secret-holder-pod.yaml
 
 # Attendre que les pods soient prêts
 echo "--> Attente du démarrage des pods..."
-kubectl wait --for=condition=available deployment/frontend-app --timeout=180s -n default
+kubectl wait --for=condition=ready deployment/frontend-app --timeout=180s -n default
 kubectl wait --for=condition=ready pod/legacy-internal-db --timeout=180s -n default
 
 echo "#####################################################"
