@@ -65,7 +65,7 @@ spec:
     emptyDir: {}
   # Assigner au worker node pour garantir sa localisation
   nodeSelector:
-    kubernetes.io/hostname: worker01 # Assurez-vous que le nom du worker est correct pour l'image Killercoda utilisée
+    kubernetes.io/hostname: node01
 EOF
 
 # 3. Configuration RBAC délibérément faible

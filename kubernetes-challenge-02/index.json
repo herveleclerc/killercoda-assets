@@ -1,5 +1,5 @@
 {
-    "title": "Challenge Hacker: L'Évasion et le Trésor Caché",
+    "title": "Kubernetes Challenge recrutements n°2",
     "description": "Exploitez une configuration Kubernetes pour trouver un flag secret caché dans le cluster.",
     "details": {
       "steps": [
