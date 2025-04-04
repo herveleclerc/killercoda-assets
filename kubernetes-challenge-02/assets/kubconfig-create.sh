@@ -186,9 +186,7 @@ if [[ $? -ne 0 ]]; then echo "Erreur lors de la configuration des identifiants u
 kubectl config set-context "${USERNAME}-context" \
   --cluster="${CLUSTER_NAME}" \
   --user="${USERNAME}" \
-  --kubeconfig="${KUBECONFIG_FILE}"
-  # Optionnel: Définir le namespace par défaut pour ce contexte
-  # --namespace="${TARGET_NAMESPACE:-default}" \
+  --namespace="${TARGET_NAMESPACE:-awcc}" \
 if [[ $? -ne 0 ]]; then echo "Erreur lors de la configuration du contexte dans ${KUBECONFIG_FILE}."; exit 1; fi
 
 

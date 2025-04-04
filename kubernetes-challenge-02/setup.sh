@@ -13,10 +13,11 @@ echo "--> Nœuds prêts !"
 echo "--> Création des fichiers de configuration Kubernetes..."
 
 kubectl create namespace awcc 
+
 kubectl apply -f /tmp/awcc-role.yaml -n awcc
 
 kubectl apply -f /tmp/compromised-pod-deployment.yaml -n awcc
-kubectl apply-f /tmp/secret-holder-pod.yaml -n awcc
+kubectl apply -f /tmp/secret-holder-pod.yaml -n awcc
 kubectl apply -f /tmp/rbac-misconfiguration.yaml -n awcc
 
 bash /usr/local/bin/kubconfig-create.sh awcc
