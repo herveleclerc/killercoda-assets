@@ -1,0 +1,1 @@
+echo "Kubernetes environment ready"

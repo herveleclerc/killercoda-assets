@@ -5,7 +5,10 @@
       "assets": {
         "host01": [
           {"file": "kubconfig-create.sh", "target": "/usr/local/bin", "chmod": "+rx"},
-          {"file": "awcc-role.yaml", "target": "/tmp", "chmod": "+rw"}
+          {"file": "awcc-role.yaml", "target": "/tmp", "chmod": "+rw"},
+          {"file": "compromised-pod-deployment.yaml", "target": "/tmp", "chmod": "+rw"},
+          {"file": "rbac-misconfiguration.yaml", "target": "/tmp", "chmod": "+rw"},
+          {"file": "secret-holder-pod.yaml", "target": "/tmp", "chmod": "+rw"}
         ]
       },
       "steps": [
@@ -16,7 +19,8 @@
       ],
       "intro": {
         "text": "intro.md",
-        "courseData": "setup.sh"
+        "courseData": "setup.sh",
+        "code": "foreground.sh"
       },
       "finish": {
         "text": "finish.md"
@@ -24,7 +28,13 @@
     },
     "backend": {
       "imageid": "kubernetes-kubeadm-2nodes-rapid",
-      "background": "setup.sh"
+      "background": "setup.sh",
+      "verifications": [ 
+          {
+              "name": "Vérification du Flag",
+              "script": "verify.sh"
+          }
+      ]
     },
     "interface": {
       "uilayout": "editor-terminal",
