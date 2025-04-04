@@ -23,10 +23,10 @@ Bienvenue, challenger !
 
 **Comment Valider le Challenge :**
 
-Une fois que vous avez trouvé le flag (qui ressemble à `KUBE{...}`), créez un fichier `/opt/flag.txt` (depuis le terminal *principal* de Killercoda, pas depuis l'intérieur du pod `exec`) contenant **uniquement** le flag :
+Une fois que vous avez trouvé le flag (qui ressemble à `KUBE{...}`), créez un fichier `/tmp/flag.txt` (depuis le terminal *principal* de Killercoda, pas depuis l'intérieur du pod `exec`) contenant **uniquement** le flag :
 
 ```bash
 # Exécutez ceci dans le terminal principal de Killercoda, PAS dans le shell du pod exec !
-echo "KUBE{votre_flag_trouve}" > /opt/flag.txt
+echo "KUBE{votre_flag_trouve}" > /tmp/flag.txt
 ```
 

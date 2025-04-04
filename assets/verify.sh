@@ -2,7 +2,7 @@
 
 
 EXPECTED_FLAG="KUBE{3sc4p3d_Th3_S4ndb0x_Successfully}"
-FLAG_FILE="/opt/flag.txt" # Chemin accessible depuis l'environnement Killercoda principal
+FLAG_FILE="/tmp/flag.txt" # Chemin accessible depuis l'environnement Killercoda principal
 
 # Vérifie si le fichier flag existe
 if [[ -f "$FLAG_FILE" ]]; then
