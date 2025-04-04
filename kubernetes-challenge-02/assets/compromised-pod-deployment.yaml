@@ -18,5 +18,13 @@ spec:
       containers:
       - name: frontend-container
         # Image avec curl
-        image: alpine:latest 
+        image: alterway/alpine:websocat
         command: ["sleep", "3600"]
+        securityContext:
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - name: tmp-volume
+          mountPath: /tmp
+      volumes:
+      - name: tmp-volume
+        emptyDir: {}    
