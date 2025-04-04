@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: awcc
+  name: default-pod-reader
+rules:
+- apiGroups: [""]
+  resources: ["pods", "pods/log", "secrets"] # Autorise lecture pods/secrets
+  verbs: ["get", "list", "watch"]
+- apiGroups: [""]
+  resources: ["pods/exec"] # Faille : Autorise l'exec dans les pods !
+  verbs: ["create", "get"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: bind-default-sa-to-reader
+  namespace: awcc
+subjects:
+- kind: ServiceAccount
+  name: default # Lie le rôle au ServiceAccount PAR DÉFAUT
+  namespace: awcc
+roleRef:
+  kind: Role
+  name: default-pod-reader
+  apiGroup: rbac.authorization.k8s.io

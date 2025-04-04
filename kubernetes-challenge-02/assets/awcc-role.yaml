@@ -1,0 +1,59 @@
+# --- Definition du Role 'awcc-role-restricted-exec' dans le namespace 'awcc' ---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  # Nom du Role (légèrement modifié pour refléter la restriction)
+  name: awcc-role-restricted-exec
+  # Namespace où ce Role s'applique
+  namespace: awcc
+rules:
+# --- Droits généraux ---
+# Lister tous les pods du namespace
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["list", "watch"] # On garde le droit de lister tous les pods
+
+# Lister et voir les ConfigMaps
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["list", "get", "watch"]
+
+# Lister et voir les Deployments et StatefulSets
+- apiGroups: ["apps"]
+  resources: ["deployments", "statefulsets"]
+  verbs: ["list", "get", "watch"]
+
+# --- Droits spécifiques pour frontend-app-0 ---
+# Obtenir les détails du pod spécifique (nécessaire pour que kubectl exec le trouve)
+- apiGroups: [""]
+  resources: ["pods"]
+  # Restreint cette règle uniquement au pod nommé 'frontend-app-0'
+  resourceNames: ["frontend-app-0"]
+  verbs: ["get"]
+
+# Autoriser l'exec UNIQUEMENT dans le pod spécifique
+- apiGroups: [""]
+  resources: ["pods/exec"]
+  # Restreint cette règle uniquement au pod nommé 'frontend-app-0'
+  resourceNames: ["frontend-app-0"]
+  verbs: ["create"] # Rappel : 'exec' utilise le verbe 'create' sur la sous-ressource 'pods/exec'
+
+---
+# --- Definition du RoleBinding liant l'utilisateur 'awcc' au nouveau Role ---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  # Nom du RoleBinding (peut être le même ou différent)
+  name: awcc-user-restricted-exec-binding
+  # Namespace où ce RoleBinding s'applique
+  namespace: awcc
+subjects:
+# Lie l'utilisateur 'awcc'
+- kind: User
+  name: awcc # IMPORTANT: Doit correspondre exactement au nom d'utilisateur (CN) du certificat
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  # Fait référence au Role restreint défini ci-dessus
+  kind: Role
+  name: awcc-role-restricted-exec # Nom du nouveau Role
+  apiGroup: rbac.authorization.k8s.io

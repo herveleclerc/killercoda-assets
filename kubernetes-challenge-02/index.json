@@ -2,6 +2,12 @@
     "title": "Kubernetes Challenge recrutements n°2",
     "description": "Exploitez une configuration Kubernetes pour trouver un flag secret caché dans le cluster.",
     "details": {
+      "assets": {
+        "host01": [
+          {"file": "kubconfig-create.sh", "target": "/usr/local/bin", "chmod": "+rx"},
+          {"file": "awcc-role.yaml", "target": "/tmp", "chmod": "+rw"}
+        ]
+      },
       "steps": [
         {
           "title": "Accès Initial et Mission",
