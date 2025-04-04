@@ -13,8 +13,9 @@
       },
       "steps": [
         {
-          "title": "Accès Initial et Mission",
-          "text": "intro.md"
+          "title": "Le challenge",
+          "text": "step1/text.md",
+          "verify": "step1/verify.sh"
         }
       ],
       "intro": {
