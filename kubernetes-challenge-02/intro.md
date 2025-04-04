@@ -7,7 +7,7 @@ Bienvenue, Hacker !
 Ce pod semble peu intéressant à première vue.
 
 - Vous savez que le `secret` est dans un répertoire /data
-- Vous avez a disposition :
+- Vous avez à disposition :
     - `curl`
     - `websocat`
     - `jq`
