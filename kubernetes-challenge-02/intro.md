@@ -2,7 +2,7 @@
 
 Bienvenue, challenger !
 
-**Votre Situation :** Vous avez obtenu un accès shell initial dans un pod nommé `frontend-app` qui tourne dans un cluster Kubernetes. Ce pod semble peu intéressant à première vue.
+**Votre Situation :** Vous avez obtenu un accès shell initial dans un pod nommé `frontend-app-0` qui tourne dans un cluster Kubernetes. Ce pod semble peu intéressant à première vue.
 
 **Votre Mission :** Utilisez cet accès comme point de départ pour explorer l'environnement Kubernetes. Votre objectif est de découvrir des failles de configuration, d'escalader vos privilèges ou de trouver d'autres moyens d'accéder à des zones restreintes du cluster pour localiser et récupérer un "flag" secret (une chaîne de caractères au format `KUBE{...}`).
 

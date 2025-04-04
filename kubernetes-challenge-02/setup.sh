@@ -25,7 +25,10 @@ bash /usr/local/bin/kubconfig-create.sh awcc
 mkdir -p /opt/.logs
 mv ~/.kube/config /opt/.logs/config
 mv awcc.kubeconfig ~/.kube/config
-rm awcc*
+rm -f awcc*
+
+
+rm -f /tmp/*.yaml
 
 echo "#####################################################"
 echo "## Environnement Kubernetes prêt pour le challenge ! ##"

@@ -20,7 +20,8 @@
       "intro": {
         "text": "intro.md",
         "courseData": "setup.sh",
-        "code": "foreground.sh"
+        "code": "foreground.sh",
+        "verify": "verify.sh"
       },
       "finish": {
         "text": "finish.md"
@@ -28,13 +29,7 @@
     },
     "backend": {
       "imageid": "kubernetes-kubeadm-2nodes-rapid",
-      "background": "setup.sh",
-      "verifications": [ 
-          {
-              "name": "Vérification du Flag",
-              "script": "verify.sh"
-          }
-      ]
+      "background": "setup.sh"
     },
     "interface": {
       "uilayout": "editor-terminal",
